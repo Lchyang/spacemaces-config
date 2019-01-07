@@ -42,6 +42,7 @@ values."
               chinese-enable-youdao-dict t)
      auto-completion
      emacs-lisp
+     java
      (python :variables
              python-sort-imports-on-save t
              python-enable-yapf-format-on-save t
@@ -320,14 +321,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq tramp-ssh-controlmaster-options
         "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
-
-
 ;; 设置包下载源
 (setq configuration-layer--elpa-archives
            '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
             ("org-cn"   . "http://elpa.zilongshanren.com/org/")
             ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
-
 
   )
 
@@ -374,9 +372,11 @@ you should place your code here."
               '((nil :maxlevel . 3)
               (org-agenda-files :maxlevel . 3)))
 
-      (setq org-refile-use-outline-path 'file)
+      ;; (setq org-refile-keep t)
 
-      (setq org-outline-path-complete-in-steps nil)
+      ;; (setq org-refile-use-outline-path 'file)
+
+      ;; (setq org-outline-path-complete-in-steps nil)
 
       (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
@@ -442,7 +442,7 @@ you should place your code here."
  '(org-refile-active-region-within-subtree t)
  '(package-selected-packages
    (quote
-    (wttrin xterm-color yasnippet-snippets pony-mode f s dash avy ibuffer-projectile youdao-dictionary names chinese-word-at-point pyim pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic unfill org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim htmlize helm-company helm-c-yasnippet gnuplot fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck company auto-yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup yasnippet which-key undo-tree org-plus-contrib mmm-mode json-mode js2-mode ivy hydra evil-unimpaired company-statistics coffee-mode async aggressive-indent adaptive-wrap ace-window)))
+    (company-emacs-eclim eclim wttrin xterm-color yasnippet-snippets pony-mode f s dash avy ibuffer-projectile youdao-dictionary names chinese-word-at-point pyim pyim-basedict pangu-spacing find-by-pinyin-dired ace-pinyin pinyinlib markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic unfill org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim htmlize helm-company helm-c-yasnippet gnuplot fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck company auto-yasnippet auto-dictionary ac-ispell auto-complete ws-butler winum volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu highlight elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup yasnippet which-key undo-tree org-plus-contrib mmm-mode json-mode js2-mode ivy hydra evil-unimpaired company-statistics coffee-mode async aggressive-indent adaptive-wrap ace-window)))
  '(paradox-github-token t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
